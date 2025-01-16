@@ -1,4 +1,4 @@
-module ops-git.im30.lan/devops/opsplatform/gofaketime.git
+module github.com/dyjwl/gofaketime
 
 go 1.21.5
 
