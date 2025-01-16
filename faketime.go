@@ -21,7 +21,8 @@ var lockerNow = sync.Mutex{}
 func getTimeFromC() int64 {
 	ch := make(chan int64, 1)
 	go func() {
-		ch <- int64(C.time(nil))
+		var t C.time_t
+		ch <- int64(C.time(&t)) // 将时间存储在 t 中
 	}()
 	return <-ch
 }
